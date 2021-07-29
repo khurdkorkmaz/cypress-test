@@ -25,3 +25,12 @@ describe('My Third Test', () => {
             .should('have.value','fake@email.com')
     })
 })
+
+describe('My Google Test', () => {
+    it ('Submits a google search', () => {
+        cy.visit('https://www.google.com')
+        cy.get('.gLFyf').type('Platform One{enter}');
+        cy.url().should('include', 'Platform+One')
+
+    })
+})
